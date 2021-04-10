@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--    配置扫描包-->
+    <context:component-scan base-package="com.zxj.service"/>
+
+
+<!--    配置包，将service类加载到spring当中-->
+    <bean id="bookService" class="com.zxj.service.BookServiceImpl">
+        <property name="booksMapper" ref="booksMapper"/>
+    </bean>
+
+    <bean id="userService" class="com.zxj.service.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+
+    <bean id="recordService" class="com.zxj.service.RecordServiceImpl">
+        <property name="recordMapper" ref="recordMapper"/>
+
+    </bean>
+
+
+
+
+
+
+
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <typeAliases>
+        <package name="com.zxj.pojo"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper class="com.zxj.dao.BooksMapper"/>
+        <mapper class="com.zxj.dao.UserMapper"/>
+        <mapper class="com.zxj.dao.RecordMapper"/>
+
+
+    </mappers>
+
+
+
+</configuration>

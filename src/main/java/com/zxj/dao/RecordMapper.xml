@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxj.dao.RecordMapper">
+    <insert id="addRecord" parameterType="Record">
+        insert into record (userId, bookId, borrowTime, returnTime, cost)
+        values (#{userId}, #{bookId}, #{borrowTime}, #{returnTime}, #{cost});
+
+    </insert>
+
+    <update id="updateRecord" parameterType="Record">
+        update record
+        set returnTime = #{returnTime},
+            cost       = #{cost}
+        where rid = #{rid};
+    </update>
+
+
+    <select id="selectRecordByUserId" parameterType="int" resultType="Record">
+        select *
+        from record
+        where userId = #{userId};
+    </select>
+
+    <select id="selectRecordByBookId" parameterType="int" resultType="Record">
+        select *
+        from record
+        where bookId = #{bookId};
+    </select>
+
+</mapper>
